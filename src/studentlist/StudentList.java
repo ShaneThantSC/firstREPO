@@ -22,12 +22,16 @@ public class StudentList {
             String name = input.nextLine();
             Student student = new Student(name);
             students[i] = student;
+
+            System.out.println("Enter the email for student " + (i + 1));
+            String email = input.nextLine();
+            student.setEmail(email);
         }
 
-        String format = "Student's name is %s\n";
+        String format = "Student's name is %s, email is %s\n";
         
         for (Student student: students) {
-            System.out.printf(format, student.getName());            
+            System.out.printf(format, student.getName(), student.getEmail());            
         }        
     }
 }
